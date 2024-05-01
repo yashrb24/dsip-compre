@@ -2,7 +2,7 @@ import asyncio
 import websockets
 
 async def send_messages():
-    async with websockets.connect("ws://localhost:8765") as websocket:
+    async with websockets.connect("ws://localhost:8500") as websocket:
         while True:
             n = input("Enter an integer (or 'exit' to quit): ")
             if n.lower() == "exit":
