@@ -12,6 +12,7 @@ async def handle_connection(websocket, path):
                 else:
                     result = sum(range(1, n + 1))
                     print(result)
+                    await websocket.send(f"The sum of integers from 1 to {n} is {result}.")
             except ValueError:
                 await websocket.send("Invalid input: Please provide an integer.")
     except websockets.exceptions.ConnectionClosedOK:
